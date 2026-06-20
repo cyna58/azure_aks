@@ -1,0 +1,25 @@
+grafana:
+  enabled: true
+
+  ingress:
+    enabled: true
+
+    ingressClassName: external-nginx
+
+    hosts:
+      - grafana.134.112.14.81.nip.io
+
+    annotations:
+      cert-manager.io/cluster-issuer: poe-cluster-issuer
+
+    tls:
+      - secretName: grafana-tls
+        hosts:
+          - grafana.134.112.14.81.nip.io
+
+prometheus:
+  prometheusSpec:
+    retention: 2d
+
+alertmanager:
+  enabled: true
