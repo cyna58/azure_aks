@@ -8,8 +8,4 @@ resource "helm_release" "poe" {
   namespace        = "poe"
   create_namespace = true
 
- depends_on = [
-    azurerm_kubernetes_cluster.azure_aks,
-    azurerm_kubernetes_cluster_node_pool.spot
-  ]
 }

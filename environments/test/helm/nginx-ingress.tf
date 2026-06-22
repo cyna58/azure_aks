@@ -1,10 +1,10 @@
-data "azurerm_kubernetes_cluster" "azure_aks" {
-  name                = var.cluster_name
-  resource_group_name = var.resource_group_name
+# data "azurerm_kubernetes_cluster" "azure_aks" {
+#   name                = var.cluster_name
+#   resource_group_name = var.resource_group_name
 
-  # Comment this out if you get: Error: Kubernetes cluster unreachable 
-  depends_on = [azurerm_kubernetes_cluster.azure_aks]
-}
+
+#   depends_on = [azurerm_kubernetes_cluster.azure_aks]
+# }
 
 resource "helm_release" "external_nginx" {
   name = "external"

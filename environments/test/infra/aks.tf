@@ -50,10 +50,10 @@ resource "azurerm_kubernetes_cluster" "azure_aks" {
     azurerm_role_assignment.base
   ]
 
-  # azure_active_directory_role_based_access_control {
-  #     admin_group_object_ids = [
-  #     azuread_group.aks_admin.object_id
-  #   ]
-  # }
+  azure_active_directory_role_based_access_control {
+      admin_group_object_ids = [
+      azuread_group.aks_admin.object_id
+    ]
+  }
 
 }
