@@ -67,19 +67,15 @@ echo "=============================="
 
 helm upgrade --install poe-wheel-of-choice poe-woc/poe-woc --namespace $POE_NS --create-namespace --version 0.1.0
 
-
-
 echo "=============================="
 echo "  POE INGRESS (TLS)"
 echo "=============================="
 
-cat "${SCRIPT_DIR}/ingress_tls.yaml" | sed "s/134.112.14.81.nip.io/${DOMAIN}/g" > /tmp/aks/ingress_tls.yaml |  kubectl apply -n $POE_NS -f /tmp/aks/ingress_tls.yaml
+cat "${SCRIPT_DIR}/ingress_tls.yaml" | sed "s/134.112.14.81.nip.io/${DOMAIN}/g" > /tmp/aks/ingress_tls.yaml | kubectl apply -n $POE_NS -f /tmp/aks/ingress_tls.yaml
 
 echo "=============================="
 echo "  MONITORING (PROMETHEUS STACK)"
 echo "=============================="
-
-
 
 sed "s/134.112.14.81.nip.io/${DOMAIN}/g" "${SCRIPT_DIR}/monitoring.yaml" > /tmp/aks/monitoring.yaml
 
