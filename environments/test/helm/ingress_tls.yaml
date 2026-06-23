@@ -10,11 +10,11 @@ spec:
 
   tls:
   - hosts:
-    - poe.134.112.14.81.nip.io #IP needs to be change once aks is created
+    - poe.134.112.14.81.nip.io 
     secretName: poe-tls
 
   rules:
-  - host: poe.134.112.14.81.nip.io #IP needs to be change once aks is created
+  - host: poe.134.112.14.81.nip.io 
     http:
       paths:
       - path: /
